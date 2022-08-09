@@ -8,23 +8,144 @@ execute:
   message: false
 ---
 
-## Quarto
-
-Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
-
-## Running Code
-
-When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+## Vectors
 
 ```{r}
-1 + 1
-```
+#Create a vector
+dogs <- c("teddy", "khora", "waffle", "banjo", "tallie")
 
-You can add options to executable code like this
+#Check the class
+class(dogs)
+
+dogs
+```
 
 ```{r}
-#| echo: false
-2 * 2
+cats <- c("creamsicle wolf", 14.2, 3L)
+
+class(cats)
+
+cats
 ```
 
-The `echo: false` option disables the printing of code (only output is displayed).
+``` {r}
+years <- c(20, 40, 16, 2)
+
+class(years)
+
+typeof(years)
+```
+
+```{r}
+# Want to do a conditional check
+# is. <<< asks questions "is this THIS"
+# as. <<< gives a command "make this THIS"
+
+is.numeric(years)
+is.character(years)
+```
+
+```{r}
+dog_food <- c(teddy = "purina", khora = "alpo", waffle = "fancy feast")
+
+dog_food
+
+dog_food[2]
+
+dog_food["khora"]
+```
+
+```{r}
+cars <- c("blue", "orange", "white")
+
+cars[1]
+
+i <- seq(1:2)
+
+cars[i]
+
+```
+
+```{r}
+cars[3] <- "yellow"
+
+cars
+```
+
+## Matrices
+
+```{r}
+fish_size <- matrix(c(12, 14, 18, 20), ncol = 2, nrow = 2, byrow = FALSE)
+
+class(fish_size)
+
+#Example Indexing:
+fish_size[1,1]
+fish_size[2,1] 
+typeof(fish_size) 
+
+#What happens if we create a matrix with different types of data?
+fish_type <- matrix(c(12, "trout", 18, 13L), ncol = 2, nrow = 2, byrow = FALSE)
+
+typeof(fish_type)
+
+fish_type
+
+fish_size
+#Leaving comma will include all col/row
+fish_size [2,]
+
+fish_size[,1]
+```
+
+## Lists
+
+Reminder: A list combines vectors that can be of different lenghts and type
+
+```{r}
+urchins <- list("blue", c(1, 2, 3), c("a cat", "a dog"), 5L)
+
+ex1 <- urchins[3]
+
+class(ex1)
+
+ex2 <- urchins[[3]]
+class(ex2)
+
+```
+
+## Make A Name List
+
+```{r}
+tacos <- list(topping = c("onion", "cilatro", "guac"),
+              filling = c("beans", "meat", "veggies"),
+              price = c(6.75, 8.25, 9.50))
+
+tacos
+#Indexing list elements by name
+tacos$topping
+tacos$filling[2]
+
+```
+
+```{r}
+my_list <- list(cats = c(1,2,3), dogs = c(10,11,12))
+```
+
+The second value of dogs is `r my_list$dogs[2]`
+
+## Data Frame
+
+```{r}
+topping <- c("onion", "cilantro", "guac")
+filling <- c("beans", "meat", "veggies")
+price <- c( 6.75, 8.25, 9.50)
+
+df_ex_1 <- data.frame(topping, filling, price)
+```
+
+
+
+
+
+

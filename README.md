@@ -1,3 +1,3 @@
-# eds221-day2-comp
+## eds221-day2-comp
 
-Creating 
+Creating data Structure
